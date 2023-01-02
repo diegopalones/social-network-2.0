@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import Post from "../Home/Posts/Post";
 
 const Profile = () => {
     const {user} = useSelector(state=>state.auth)
@@ -9,6 +10,7 @@ const Profile = () => {
   return (
     <div>
         <p>{user.user.username}</p>
+        <p>{user.user.email}</p>
     </div>
   )
 }
