@@ -33,6 +33,13 @@ export const logout = createAsyncThunk("auth/logout", async () => {
       console.error(error);
     }
   });
+  export const getInfo = createAsyncThunk("auth/getInfo", async () => {
+    try {
+        return await authService.getInfo();
+    } catch (error) {
+        console.error(error)
+    }
+  });
 
 export const authSlice = createSlice({
 
