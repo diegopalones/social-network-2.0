@@ -1,13 +1,21 @@
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { deletePost, like, unLike } from "../../../features/posts/postsSlice";
+import { deletePost,getById, like, unLike,updatePost } from "../../../features/posts/postsSlice";
 
-import { HeartOutlined, HeartFilled, DeleteOutlined } from "@ant-design/icons";
+import { HeartOutlined, HeartFilled, DeleteOutlined,EditOutlined } from "@ant-design/icons";
+import EditModel from "./EditModel/EditModel";
+import { useState } from "react";
 
 const Post = () => {
   const { posts } = useSelector((state) => state.posts);
   const { user } = useSelector((state) => state.auth);
+  const [isModalVisible, setIsModalVisible] = useState(false);
   const dispatch = useDispatch();
+  const showModal = (_id) => {
+
+    dispatch(getById(_id));
+    setIsModalVisible(true);
+  };
 
   const post = posts.map((post) => {
     const isAlreadyLiked = post.likes?.includes(user?.user._id);
@@ -26,11 +34,17 @@ const Post = () => {
           <HeartOutlined onClick={() => dispatch(like(post._id))} />
         )}
         <DeleteOutlined onClick={() => dispatch(deletePost(post._id))} />
+        <EditOutlined onClick={() => showModal(post._id)} />
       </div>
     );
   });
 
-  return <div>{post}</div>;
+  return (
+    <div className="post">
+      {post}
+      <EditModel visible={isModalVisible} setVisible={setIsModalVisible} />
+    </div>
+  );
 };
 
 export default Post;
