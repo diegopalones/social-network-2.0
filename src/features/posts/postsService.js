@@ -82,7 +82,6 @@ const comment = async (comment) => {
 
 
 const postsService = {
-
     getAllPosts,
     getById,
     getPostByName,
