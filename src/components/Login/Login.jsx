@@ -1,18 +1,16 @@
 import React, { useState } from "react";
 
-const Register = () => {
+const Login = () => {
   const [formData, setFormData] = useState({
-    username: "",
     email: "",
     password: "",
   });
 
-  const { username, email, password } = formData;
+  const { email, password } = formData;
 
   const onChange = (e) => {
     setFormData((prevState) => ({
       ...prevState,
-
       [e.target.name]: e.target.value,
     }));
   };
@@ -24,9 +22,7 @@ const Register = () => {
 
   return (
     <form onSubmit={onSubmit}>
-      <input type="text" name="name" value={username} onChange={onChange} />
       <input type="email" name="email" value={email} onChange={onChange} />
-
       <input
         type="password"
         name="password"
@@ -34,9 +30,9 @@ const Register = () => {
         onChange={onChange}
       />
 
-      <button type="submit">Register</button>
+      <button type="submit">Login</button>
     </form>
   );
 };
 
-export default Register;
+export default Login;
