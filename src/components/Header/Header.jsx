@@ -4,8 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { logout, reset } from "../../features/auth/authSlice";
 import "./Header.scss";
-import Logo1 from "../../assets/Logo1.png"
-import {LogoutOutlined,HomeOutlined} from "@ant-design/icons";
+import Logo1 from "../../assets/Logo1.png";
+import { LogoutOutlined, HomeOutlined } from "@ant-design/icons";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -15,8 +15,7 @@ const Header = () => {
   const handleChange = (e) => {
     setText(e.target.value);
     if (e.key === "Enter") {
-      
-      navigate("/search/"+text)
+      navigate("/search/" + text);
     }
   };
 
@@ -43,11 +42,16 @@ const Header = () => {
 
   return (
     <nav>
-      <span> <img src={Logo1} height="80px" alt="Girl in a jacket"></img></span>
+      <span>
+        {" "}
+        <img src={Logo1} height="80px" alt="Girl in a jacket"></img>
+      </span>
       <div>
         <span>
           <input onKeyUp={handleChange} placeholder="Buscar post" name="text" />
-          <Link to="/"><HomeOutlined /></Link>
+          <Link to="/">
+            <HomeOutlined />
+          </Link>
           {/* <Link to="/profile">Profile</Link> */}
         </span>
         {user ? (
@@ -56,6 +60,13 @@ const Header = () => {
             <span>
               <Link to="/profile">{user.user.name}</Link>
             </span>
+            {user.user.role === "admin" ? (
+              <span>
+                <Link to="/admin">Admin</Link>
+              </span>
+            ) : (
+              ""
+            )}
           </>
         ) : (
           <>
