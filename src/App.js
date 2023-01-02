@@ -6,6 +6,7 @@ import Register from './components/Register/Register';
 import Home from './components/Home/Home';
 import Header from './components/Header/Header';
 import Profile from './components/Profile/Profile';
+import PostDetail from './components/PostDetail/PostDetail';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/post/id/:_id" element={<PostDetail/>} />
 
       </Routes>
       </BrowserRouter>
