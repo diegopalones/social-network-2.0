@@ -1,11 +1,11 @@
-import { notification } from "antd";
+import { notification, Avatar } from "antd";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { logout, reset } from "../../features/auth/authSlice";
 import "./Header.scss";
 import Logo1 from "../../assets/Logo1.png";
-import { LogoutOutlined, HomeOutlined } from "@ant-design/icons";
+import { LogoutOutlined, HomeOutlined,TeamOutlined } from "@ant-design/icons";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -44,7 +44,7 @@ const Header = () => {
     <nav>
       <span>
         {" "}
-        <img src={Logo1} height="80px" alt="Girl in a jacket"></img>
+        <img src={Logo1} height="80px" alt="Divorced Heart"></img>
       </span>
       <div>
         <span>
@@ -52,13 +52,14 @@ const Header = () => {
           <Link to="/">
             <HomeOutlined />
           </Link>
-          {/* <Link to="/profile">Profile</Link> */}
+           
         </span>
         {user ? (
           <>
+          <Link to="/profile"> <TeamOutlined /></Link>
             <span onClick={onLogout}> {<LogoutOutlined />}</span>
             <span>
-              <Link to="/profile">{user.user.name}</Link>
+            
             </span>
             {user.user.role === "admin" ? (
               <span>

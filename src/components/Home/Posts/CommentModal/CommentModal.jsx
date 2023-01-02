@@ -6,8 +6,8 @@ import {comment} from "../../../../features/posts/postsSlice";
 import {reset,} from "../../../../features/auth/authSlice";
 import { notification } from "antd";
 import { useDispatch } from "react-redux";
-import "./CommentModel.scss";
-const CommentModel = ({ isModalVisible, setIsModalVisible }) => {
+import "./CommentModal.scss";
+const CommentModal = ({ isModalVisible, setIsModalVisible }) => {
     
   const { post } = useSelector((state) => state.posts);
   const { user, isError, isSuccess, message } = useSelector( (state) => state.auth);
@@ -75,4 +75,4 @@ const CommentModel = ({ isModalVisible, setIsModalVisible }) => {
   );
 };
 
-export default CommentModel;
+export default CommentModal;

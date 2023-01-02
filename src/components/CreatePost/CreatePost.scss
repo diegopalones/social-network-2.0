@@ -7,6 +7,10 @@
     height: 35px;
     border-radius: 1rem;
     margin-right: 1px;
+    font-size: 25px;
+    text-align: center;
+     
+     
   
 }
 
@@ -14,6 +18,9 @@
     width: 70%;
     border-radius: 1rem;
     height: 70px;
+    font-size: 25px;
+    text-align: center;
+  
 }
 
 .form-post {
@@ -49,9 +56,11 @@
     width: 100px;
     font-family: "pathway Gothic One";
     font-size: 20px;
+    margin-top: 15px;
+     
 }
 .submit:hover {
-    background-color:aqua;
+    background-color:rgb(25, 199, 199);
 }
 
 .myfile {

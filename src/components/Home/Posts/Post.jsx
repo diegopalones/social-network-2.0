@@ -17,8 +17,8 @@ import {
   MessageOutlined,
 } from "@ant-design/icons";
 import "./Post.scss";
-import EditModel from "./EditModel/EditModel";
-import CommentModel from "./CommentModel/CommentModel";
+import EditModal from "./EditModal/EditModal";
+import CommentModal from "./CommentModal/CommentModal";
 import { notification } from "antd";
 
 const Post = () => {
@@ -95,8 +95,8 @@ const Post = () => {
   return (
     <div className="post">
       {post}
-      <EditModel visible={isModalVisible} setVisible={setIsModalVisible} />
-      <CommentModel
+      <EditModal visible={isModalVisible} setVisible={setIsModalVisible} />
+      <CommentModal
         isModalVisible={isModalVisible2}
         setIsModalVisible={setIsModalVisible2}
       />

@@ -2,12 +2,11 @@ import React from "react";
 import CreatePost from "../CreatePost/CreatePost";
 import Posts from "./Posts/Posts";
 const Home = () => {
-    return (
-      <div>
-        Home
-        <Posts />
-        <CreatePost/>
-        </div>
+  return (
+    <div>
+      <Posts />
+      <CreatePost />
+    </div>
   );
 };
 
