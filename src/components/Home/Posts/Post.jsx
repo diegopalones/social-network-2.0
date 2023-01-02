@@ -1,40 +1,93 @@
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
-import { deletePost,getById, like, unLike,updatePost } from "../../../features/posts/postsSlice";
-
-import { HeartOutlined, HeartFilled, DeleteOutlined,EditOutlined } from "@ant-design/icons";
+import {
+  deletePost,
+  getById,
+  like,
+  unLike,
+  updatePost,
+  reset,
+  comment,
+} from "../../../features/posts/postsSlice";
+import {
+  HeartOutlined,
+  HeartFilled,
+  DeleteOutlined,
+  EditOutlined,
+  MessageOutlined,
+} from "@ant-design/icons";
+import "./Post.scss";
 import EditModel from "./EditModel/EditModel";
-import { useState } from "react";
+import CommentModel from "./CommentModel/CommentModel";
+import { notification } from "antd";
 
 const Post = () => {
-  const { posts } = useSelector((state) => state.posts);
+  const { posts, message, isSuccess, isError } = useSelector(
+    (state) => state.posts
+  );
   const { user } = useSelector((state) => state.auth);
   const [isModalVisible, setIsModalVisible] = useState(false);
-  const dispatch = useDispatch();
-  const showModal = (_id) => {
+  const [isModalVisible2, setIsModalVisible2] = useState(false);
 
+  const dispatch = useDispatch();
+  const API_URL = "http://localhost:8080/"; 
+  
+
+  useEffect(() => {
+    if (isError) {
+      notification.error({ message: "Error", description: message });
+    }
+    if (isSuccess) {
+      notification.success({ message: "Success", description: message });
+    }
+    dispatch(reset());
+  }, [message, isError, isSuccess]);
+
+  const showModal = (_id) => {
     dispatch(getById(_id));
     setIsModalVisible(true);
+  };
+
+  const showModalComment = (_id) => {
+    dispatch(getById(_id));
+    setIsModalVisible2(true);
   };
 
   const post = posts.map((post) => {
     const isAlreadyLiked = post.likes?.includes(user?.user._id);
 
-    const author = user.user.postIds;
-    console.log(" el mismísimo autor de esta cagá", author);
-
     return (
-      <div className="Product" key={post._id}>
-        <h3>{post.title}</h3>
-        <p>{post.body}</p>
-        <span className="wish">likes: {post.likes?.length}</span>
-        {isAlreadyLiked ? (
-          <HeartFilled onClick={() => dispatch(unLike(post._id))} />
-        ) : (
-          <HeartOutlined onClick={() => dispatch(like(post._id))} />
-        )}
-        <DeleteOutlined onClick={() => dispatch(deletePost(post._id))} />
-        <EditOutlined onClick={() => showModal(post._id)} />
+      <div className="container" key={post._id}>
+        <div className="title-body-image">
+          {post.image_path && (
+            <div className="image">
+              <img
+                className="imagepost"
+                src={API_URL + post.image_path}
+                alt=""
+              />
+            </div>
+          )}
+          <div className="title-body">
+            <h3>{post.title}</h3>
+            <p>{post.body}</p>
+            
+
+          </div>
+        </div>
+
+        <div className="delete-edit-like">
+          <MessageOutlined onClick={() => showModalComment(post._id)} />
+          <DeleteOutlined onClick={() => dispatch(deletePost(post._id))} />
+          <EditOutlined onClick={() => showModal(post._id)} />
+          <span className="wish">likes: {post.likes?.length}</span>
+          {isAlreadyLiked ? (
+            <HeartFilled onClick={() => dispatch(unLike(post._id))} />
+          ) : (
+            <HeartOutlined onClick={() => dispatch(like(post._id))} />
+          )}
+          
+        </div>
       </div>
     );
   });
@@ -43,6 +96,10 @@ const Post = () => {
     <div className="post">
       {post}
       <EditModel visible={isModalVisible} setVisible={setIsModalVisible} />
+      <CommentModel
+        isModalVisible={isModalVisible2}
+        setIsModalVisible={setIsModalVisible2}
+      />
     </div>
   );
 };

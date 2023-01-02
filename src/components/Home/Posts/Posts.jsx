@@ -3,12 +3,13 @@ import { useDispatch, useSelector } from "react-redux";
 import Post from "./Post";
 import { getAllPosts, reset } from "../../../features/posts/postsSlice";
 import { Spin } from "antd";
+import { getInfo } from "../../../features/auth/authSlice";
 
 
 
 const Posts = () => {
   const dispatch = useDispatch();
-  const { isLoading } = useSelector((state) => state.posts);
+  const { isLoading, posts } = useSelector((state) => state.posts);
 
   const getPostsAndReset = async () => {
     await dispatch(getAllPosts());
@@ -17,14 +18,18 @@ const Posts = () => {
   useEffect(() => {
     getPostsAndReset();
   }, []);
+
+  useEffect(() => {
+    dispatch(getInfo());
+  }, []);
   if (isLoading) {
     return (
         <Spin />
     );
   }
   return (
-    <div>
-      Posts
+    <div className="posts">
+      <h1 className="font">Aquí estan todos los posts...</h1>
       <Post />
     </div>
   );
