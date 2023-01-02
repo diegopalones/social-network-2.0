@@ -1,0 +1,29 @@
+nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: rgb(36, 104, 121);
+    font-size: 300%;
+    
+}
+
+nav div{
+    display: flex;
+    justify-content:flex-start;
+    gap: 50px;
+    margin-top: 15px;
+    margin-right: 20px;
+
+}
+
+input {
+    margin-right: 300px;
+    width: 300px;
+    height: 30px;
+    margin-bottom: 30px;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+}
