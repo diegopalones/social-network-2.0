@@ -57,6 +57,28 @@ const createPost = async (postData) => {
     });
     return res.data
 }
+const updatePost = async (post) => {
+
+    const user = JSON.parse(localStorage.getItem("user"));
+    const res = await axios.put(API_URL + "/posts/" + post.id, post, {
+        headers: {
+            authorization: user?.token
+        }
+    })
+
+
+    return res.data
+};
+
+
+const comment = async (comment) => {
+    const user = JSON.parse(localStorage.getItem("user"));
+    const res = await axios.put(API_URL + "/posts/comments/" + comment._id, comment, 
+    { headers: { authorization: user?.token } });
+    
+
+    return res.data
+};
 
 
 const postsService = {
@@ -67,7 +89,9 @@ const postsService = {
     deletePost,
     like,
     unLike,
-    createPost
+    createPost,
+    updatePost,
+    comment
     
     
     };
