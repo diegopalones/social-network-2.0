@@ -1,11 +1,15 @@
 .container-register {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 150px;
+    margin-top: 60px;
      
 
+  }
+  .img-reg{
+    height: 150px;
+    width: 250px;
   }
 
 .form-input {

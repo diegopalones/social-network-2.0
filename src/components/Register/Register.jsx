@@ -4,6 +4,7 @@ import { register } from "../../features/auth/authSlice";
 import { notification } from "antd";
 import { useNavigate } from "react-router-dom";
 import "./Register.scss";
+import regImage from "../../assets/66273.jpg";
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -73,6 +74,7 @@ const Register = () => {
   return (
     <div className="container-register">
       <div className="form">
+      <img className="img-reg" src={regImage} alt="Mi imagen" />
         <form onSubmit={onSubmit}>
           <input
             className="form-input"
