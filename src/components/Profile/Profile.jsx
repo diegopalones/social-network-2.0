@@ -8,9 +8,9 @@ const Profile = () => {
     return <p>cargando</p>;
   }
   return (
-    <div className="profilePadre">
-      <div className="profilediv">
-        <h1>Profile</h1>
+    <div>
+      <div>
+        <h1>Tus datos:</h1>
         <p>{user.user.username}</p>
         <p>{user.user.email}</p>
       </div>

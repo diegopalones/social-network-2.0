@@ -7,16 +7,14 @@ import {reset,} from "../../../../features/auth/authSlice";
 import { notification } from "antd";
 import { useDispatch } from "react-redux";
 import "./CommentModal.scss";
+
 const CommentModal = ({ isModalVisible, setIsModalVisible }) => {
-    
   const { post } = useSelector((state) => state.posts);
   const { user, isError, isSuccess, message } = useSelector( (state) => state.auth);
 
   const { TextArea } = Input;
   const dispatch = useDispatch();
   const [form] = Form.useForm();
-
- 
 
   const onFinish = (values) => {
     const newComment = {
@@ -31,8 +29,6 @@ const CommentModal = ({ isModalVisible, setIsModalVisible }) => {
     setIsModalVisible(false);
   };
 
-
-
   return (
     <Modal
       title="Comments"
@@ -41,16 +37,10 @@ const CommentModal = ({ isModalVisible, setIsModalVisible }) => {
       footer={[]}
     >
       {post?.comments?.map((comment) => {
-          post.comments.map(function(){
-              
-            if(user.user._id === post.comments.userId) {
-                <div><p>{user.user.name}</p></div>
-            }
-          })
-        //   if(user.user._id === post.comments.userId) {
-        //     <p>{user.user.name}</p>
-        //   }
-          
+        if(user.user._id === comment.userId) {
+          return <div><p>{user.user.name}</p></div>
+        }
+
         return (
           <div className="commentdiv">
             <p>User name: {user.user.username}</p>
@@ -60,8 +50,7 @@ const CommentModal = ({ isModalVisible, setIsModalVisible }) => {
         );
       })}
 
-
-       <Form onFinish={onFinish} form={form}>
+      <Form onFinish={onFinish} form={form}>
         <Form.Item label="Comment" name="body">
           <TextArea rows={4} id="commentValue" />
         </Form.Item>

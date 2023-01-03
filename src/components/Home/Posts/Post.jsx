@@ -71,8 +71,14 @@ const Post = () => {
           <div className="title-body">
             <h3>{post.title}</h3>
             <p>{post.body}</p>
-            
-
+            <div>
+              {post.comments.map((comment) => (
+                <div key={comment._id}>
+                  <p>Usuario: {comment.username}</p>
+                  <p>Comment: {comment.comment}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
@@ -86,7 +92,6 @@ const Post = () => {
           ) : (
             <HeartOutlined onClick={() => dispatch(like(post._id))} />
           )}
-          
         </div>
       </div>
     );
