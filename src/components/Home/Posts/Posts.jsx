@@ -29,7 +29,7 @@ const Posts = () => {
   }
   return (
     <div className="posts">
-      <h1 className="font">Aquí estan todos los posts...</h1>
+      <h1 className="font">Divorciados pero no derrotados...</h1>
       <Post />
     </div>
   );

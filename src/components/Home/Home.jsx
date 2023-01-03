@@ -1,9 +1,10 @@
 import React from "react";
 import CreatePost from "../CreatePost/CreatePost";
 import Posts from "./Posts/Posts";
+import "./Home.scss"
 const Home = () => {
   return (
-    <div>
+    <div className="home">
       <Posts />
       <CreatePost />
     </div>

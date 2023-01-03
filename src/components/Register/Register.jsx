@@ -71,7 +71,7 @@ const Register = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container-register">
       <div className="form">
         <form onSubmit={onSubmit}>
           <input
