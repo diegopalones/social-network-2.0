@@ -7,6 +7,7 @@ import {
   InstagramOutlined,
 } from "@ant-design/icons";
 import "./Footer.scss";
+ 
 
 const Footer = () => {
   return (

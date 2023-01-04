@@ -32,10 +32,11 @@ const Profile = () => {
   );
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [isModalVisible2, setIsModalVisible2] = useState(false);
+  
   // const mapUser = user.user.postIds;
   const userPosts = posts.filter(post => user.user.postIds.includes(post._id));
   const dispatch = useDispatch();
-  const API_URL = "http://localhost:8080/";
+   
   useEffect(() => {
     dispatch(getInfo());
      
@@ -58,7 +59,7 @@ const Profile = () => {
   const post = userPosts.map((post) => {
     const isAlreadyLiked = post.likes?.includes(user?.user._id);
     return (
-      <div className="container" key={post._id}>
+      <div className="container-posts" key={post._id}>
         <div className="title-body">
           <h3>{post.title}</h3>
           <p>{post.body}</p>
@@ -98,7 +99,7 @@ const Profile = () => {
   
         <div className="posts">
           <h2 className="yourposts">Your Posts</h2>
-          {post}
+          <div className="post-text">{post}</div>
         </div>
   
         <EditModal

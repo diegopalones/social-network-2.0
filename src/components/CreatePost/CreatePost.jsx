@@ -30,7 +30,7 @@ function OnCreatePost (e) {
       <div>
         <form onSubmit={OnCreatePost}>
           <div>
-            <label>Title</label>
+            <label>Título del post</label>
             <div>
               <input
                 type="text"
@@ -41,7 +41,7 @@ function OnCreatePost (e) {
             </div>
           </div>
           <div>
-            <label>Description</label>
+            <label>Descripción</label>
             <div>
               <textarea
                 className="textarea"
@@ -52,7 +52,7 @@ function OnCreatePost (e) {
           </div>
           <div>
             <button type="submit" className="submit">
-              Create Post
+              Sube el post
             </button>
           </div>
         </form>

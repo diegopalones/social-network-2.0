@@ -1,1 +1,93 @@
- 
+@import "../../colors.scss";
+@import url('https://fonts.googleapis.com/css2?family=Neuton:wght@300&display=swap');
+
+.name-email {
+    font-family: 'Neuton', serif;
+    font-size: 26px;
+    box-shadow: 0 4px 8px 0 rgba(15, 94, 168, 0.808);
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin-left: 80px;
+   
+    flex-direction: column;
+    border: none;
+    background-color: $yellow;
+     
+   padding: 10px;
+    flex-wrap: wrap;
+    max-width: 100%;
+    columns: 100px 2;
+}
+.yourprofile, .yourposts {
+    font-family: 'Neuton', serif;
+    font-size: 40px;
+    flex-wrap: wrap;
+    max-width: 100%;
+    margin: 3rem;
+    
+}
+.container-posts{
+     
+    flex-wrap: wrap;
+       border-bottom: solid;
+       box-shadow: 0 4px 8px 0 rgba(0,0,0,0.9);
+     transition: 0.3s;
+       width: 60%;
+       padding-top: 15px;
+       margin: 5rem;
+       margin-left: 20rem;
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       justify-content: center;
+       background-color: rgb(243, 243, 124);
+       
+}
+
+
+.userpic-image{
+    height: 250px;
+    border-radius: 100px;
+    flex-wrap: wrap;
+    max-width: 100%;
+    
+}
+.selectfile {
+    display: flex;
+   margin-left: 100px;
+   flex-wrap: wrap;
+   display: flex;
+   font-family: "pathway Gothic One";
+   
+    max-width: 100%;
+
+}
+.myfile{
+    
+    padding-top: 10px;
+    padding-left: 10px;
+}
+.file-upload-button {
+    border-radius: 100px;
+
+}
+.upload-div{
+    display: flex;
+    flex-direction: column;
+}
+.userdetails{
+    flex-wrap: wrap;
+    max-width: 100%;
+}
+.bigdiv{
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+}
+
+.imageprofile{
+    flex-wrap: wrap;
+    max-width: 100%;
+}
+
+

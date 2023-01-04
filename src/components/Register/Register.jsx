@@ -82,7 +82,7 @@ const Register = () => {
             name="username"
             value={username}
             onChange={onChange}
-            placeholder="usuario"
+            placeholder="Tu nombre o tu usuario"
           />
 
           <input
@@ -91,7 +91,7 @@ const Register = () => {
             name="email"
             value={email}
             onChange={onChange}
-            placeholder="correo"
+            placeholder="Tu correo"
           />
 
           <input
