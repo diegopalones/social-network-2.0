@@ -79,6 +79,8 @@ const Post = () => {
                 </div>
               ))}
             </div>
+            
+
           </div>
         </div>
 
@@ -92,6 +94,7 @@ const Post = () => {
           ) : (
             <HeartOutlined onClick={() => dispatch(like(post._id))} />
           )}
+          
         </div>
       </div>
     );
