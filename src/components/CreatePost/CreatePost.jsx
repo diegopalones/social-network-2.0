@@ -23,7 +23,7 @@ function OnCreatePost (e) {
     <>
       <div>
         <div>
-          <h2>cuentanos tus penas</h2>
+          <h2 className='tell-us'>Cuéntanos tus penas</h2>
         </div>
       </div>
 
