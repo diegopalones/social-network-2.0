@@ -61,19 +61,19 @@ https://github.com/diegopalones/social-network-2.0.git
 
 ### 1. Register
 
-![foto](./assets/register.png)
+![foto](./src/assets/register.png)
 
 ### 2. Login
 
-![foto](./assets/login.png)
+![foto](./src/assets/login.png)
 
 ### 3. Profile
 
-![foto](./assets/profile.png)
+![foto](./src/assets/profile.png)
 
 ### 4. Home page with posts
 
-![foto](./assets/posts.png)
+![foto](./src/assets/posts.png)
 
 ## Author
 
@@ -83,4 +83,4 @@ https://github.com/diegopalones/social-network-2.0.git
 - Github: [@diegopalones](https://github.com/diegopalones/)
  
 
-This project was developed By [Diego Palones Ivars -](https://github.com/diegopalones/)
+This project was developed By [Diego Palones Ivars](https://github.com/diegopalones/)
