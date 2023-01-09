@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Button, Modal, Form, Input } from "antd";
-import {comment} from "../../../../features/posts/postsSlice";
+import {comment, getAllPosts} from "../../../../features/posts/postsSlice";
 import {reset,} from "../../../../features/auth/authSlice";
 import { notification } from "antd";
 import { useDispatch } from "react-redux";

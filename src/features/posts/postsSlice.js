@@ -167,10 +167,23 @@ export const postsSlice = createSlice({
       
   })
   .addCase(comment.fulfilled, (state, action) => {
-      state.isSuccess = true;
-      state.message = action.payload.message;
-      state.post = action.payload;
-  })
+    const posts = state.posts.map((post) => {
+        if (post._id === action.payload._id) {
+            post = action.payload;
+        }
+        return post;
+    });
+    state.posts = posts
+    state.isSuccess = true
+    state.isError = false;
+    state.message = action.payload.message
+})
+.addCase(comment.rejected, (state, action) => {
+  state.isError = true
+  state.isSuccess = false;
+  state.message = action.payload;
+  
+})
 
 },
 

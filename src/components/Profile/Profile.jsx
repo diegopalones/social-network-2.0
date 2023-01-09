@@ -34,7 +34,6 @@ const Profile = () => {
   const [isModalVisible2, setIsModalVisible2] = useState(false);
   
   // const mapUser = user.user.postIds;
-  const userPosts = posts.filter(post => user.user.postIds.includes(post._id));
   const dispatch = useDispatch();
    
   useEffect(() => {
@@ -56,7 +55,7 @@ const Profile = () => {
     return <Spin />;
   }
    
-  const post = userPosts.map((post) => {
+  const post = user.user.postIds.map((post) => {
     const isAlreadyLiked = post.likes?.includes(user?.user._id);
     return (
       <div className="container-posts" key={post._id}>

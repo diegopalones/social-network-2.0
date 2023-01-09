@@ -1,4 +1,4 @@
-import { notification, Avatar } from "antd";
+import { notification} from "antd";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
@@ -27,7 +27,7 @@ const Header = () => {
         description: msg,
       });
       setTimeout(() => {
-        navigate("/profile");
+        navigate("/");
       }, 2000);
     }
     dispatch(reset());
