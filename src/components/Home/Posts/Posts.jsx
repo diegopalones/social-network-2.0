@@ -30,7 +30,7 @@ const Posts = () => {
   return (
     <div className="posts">
       <div className="background-h1">
-      <h1 className="font background-h1">Divorciados pero no derrotados...</h1>
+      <h1 className="font background-h1">Divorciados, pero no derrotados...</h1>
       </div>
       <Post />
     </div>

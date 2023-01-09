@@ -38,6 +38,7 @@ const Profile = () => {
    
   useEffect(() => {
     dispatch(getInfo());
+    
      
   }, [posts]);
 
@@ -65,9 +66,9 @@ const Profile = () => {
         </div>
 
         <div className="delete-edit-like">
-          <MessageOutlined onClick={() => showModalComment(post._id)} />
+           
           <DeleteOutlined onClick={() => dispatch(deletePost(post._id))} />
-          <EditOutlined onClick={() => showModal(post._id)} />
+           
           <span className="wish">likes: {post.likes?.length}</span>
           {isAlreadyLiked ? (
             <HeartFilled onClick={() => dispatch(unLike(post._id))} />
@@ -83,7 +84,7 @@ const Profile = () => {
     }
     return (
       <div className="bigdiv">
-        <h1 className="yourprofile">Your Profile</h1>
+        <h1 className="yourprofile">Tu perfil</h1>
         <div className="selectfile">
           <img src={userpic2} alt="hhhhh" className="userpic-image" />
   
@@ -92,12 +93,14 @@ const Profile = () => {
             <p>Email: {user.user.email}</p>
             <p>Role: {user?.user.role}</p>
             <p>Number of Posts: {user?.user.postIds.length}</p>
+            <p>Followers: {user?.user.followers.length}</p>
+          <p>Following: {user?.user.following.length}</p>
             <p>Liked posts: {user?.user.favourites.length}</p>
           </div>
         </div>
   
         <div className="posts">
-          <h2 className="yourposts">Your Posts</h2>
+          <h2 className="yourposts">Tus posts</h2>
           <div className="post-text">{post}</div>
         </div>
   

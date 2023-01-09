@@ -69,13 +69,13 @@ const Post = () => {
             </div>
           )}
           <div className="title-body">
-            <h3>{post.title}</h3>
-            <p>{post.body}</p>
+            <h2>{post.title}</h2>
+            <h4>{post.body}</h4>
             <div>
               {post.comments.map((comment) => (
                 <div key={comment._id}>
-                  <p>Usuario: {comment.username}</p>
-                  <p>Comment: {comment.comment}</p>
+                  <p>Comentario de: {comment.userId.username}</p>
+                  <p>{comment.comment}</p>
                 </div>
               ))}
             </div>
