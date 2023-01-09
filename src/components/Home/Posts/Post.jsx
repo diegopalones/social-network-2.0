@@ -70,7 +70,7 @@ const Post = () => {
             </div>
           )}
           <div className="title-body">
-          <h3>Post de {post.userId.email}</h3>
+          <h3>Post de {post.userId.username}</h3>
             <h2>{post.title}</h2>
             <h4>{post.body}</h4>
             <div>

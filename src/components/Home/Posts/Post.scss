@@ -36,7 +36,16 @@
     padding-top: 2rem;
     padding-right: 2rem;
     padding-left: 2rem;
+    
 }
+.title-body h3 {
+    color: rgb(212, 233, 21);
+}
+
+.title-body p {
+    color: white
+}
+
     .delete-edit-like{
         display: flex;
         align-content: flex-end;
