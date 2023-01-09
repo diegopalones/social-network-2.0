@@ -1,46 +1,86 @@
-# Getting Started with Create React App and Redux
+# MERN SOCIAL NETWORK APP
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+The main objective of this project is to build a social network with the MERN stack. The name of the social network is Divorciados! A new social network made por people that is about to loose their marriage (or has lost it already)
 
-## Available Scripts
 
-In the project directory, you can run:
+## Built with....
 
-### `npm start`
+MERN stands for MongoDB, Express, React, Node, after the four key technologies that make up the stack:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- MongoDB - document database
+- Express(.js) - Node.js web framework
+- React(.js) - a client-side JavaScript framework
+- Node(.js) - the premier JavaScript web server
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Getting Started - Installation
 
-### `npm test`
+1. To deploy this project you must clone the Backend repository through the following link:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+https://github.com/diegopalones/Proyecto-Red-social-con-Mongoose.git
+```
 
-### `npm run build`
+2. Install all dependecies
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+npm i
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. Fill in authentication variables in the .env.example file.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4. Launch the Backend Project
 
-### `npm run eject`
+```
+npm run dev
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+5. Clone Frontend repository.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+https://github.com/diegopalones/social-network-2.0.git
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+6. Run `npm install` command
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+7. Run `npm start` command
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Project Achievements
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+| Achievements                                      |
+| ------------------------------------------------- |
+| User Login                                        |
+| User Register                                     |              |
+| User can make posts                               |
+| User can edit posts                               |
+| User can delete posts                             |                           |
+| User can like/dislike posts                       |
+| User Profile: user can see their posts            |
+
+## Social Media Preview
+
+### 1. Register
+
+![foto](./assets/register.png)
+
+### 2. Login
+
+![foto](./assets/login.png)
+
+### 3. Profile
+
+![foto](./assets/profile.png)
+
+### 4. Home page with posts
+
+![foto](./assets/posts.png)
+
+## Author
+
+👤 **Diego Palones**
+
+- Twitter: [@diego_palones](https://twitter.com/diego_palones)
+- Github: [@diegopalones](https://github.com/diegopalones/)
+ 
+
+This project was developed By [Diego Palones Ivars -](https://github.com/diegopalones/)
